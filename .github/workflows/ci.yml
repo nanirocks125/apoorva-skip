@@ -125,11 +125,12 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=nanirocks125_apoorva-skip
+            -Dsonar.projectKey=manikantanandam_apoorva-skip
             -Dsonar.organization=manikanta-nandam
             -Dsonar.sources=.
             -Dsonar.tests=.
             -Dsonar.test.inclusions=**/*Tests.swift,**/*Test.swift
             -Dsonar.exclusions=**/.skip/**,**/Skip/**,**/*.kt,**/build/**
+            -Dsonar.coverage.exclusions=**/*View.swift,**/Containers/**,**/Router/**,app/**
             -Dsonar.coverageReportPaths=${{ steps.coverage.outputs.paths }}
             -Dsonar.c.compiler=/usr/bin/clang
